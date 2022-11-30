@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/bege"
+        android:layout_margin="10dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_palavra_classe_gramatical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/marrom_escuro"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="substantivo masculino"
+                android:layout_margin="16dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/_significados_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textview_palavra_classe_gramatical"
+                app:layout_constraintStart_toStartOf="@id/textview_palavra_classe_gramatical"
+                android:text="@string/significados"
+                android:textColor="@color/marrom_escuro"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_significados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/_significados_title"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_significado" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_palavra_etimologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_significados"
+                app:layout_constraintStart_toStartOf="@id/textview_palavra_classe_gramatical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                tools:text="Etimologia (origem da palavra livro). Do latim liber.bri."
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/marrom_escuro"
+                android:textSize="24sp"
+                android:layout_marginVertical="16dp"
+                app:layout_constraintVertical_bias="0"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

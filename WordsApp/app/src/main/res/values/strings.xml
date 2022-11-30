@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Words App</string>
+    <string name="buscar_palavra">Buscar Palavra</string>
+    <string name="sinonimos">Sinônimos</string>
+    <string name="antonimos">Antônimos</string>
+    <string name="significados">Significados</string>
+    <string name="palavra_nao_encontrada">Palavra Não Encontrada</string>
+    <string name="ver_sinonimos">ver sinonimos</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.WordsApp" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bege_escuro</item>
+        <item name="colorPrimaryVariant">@color/marrom</item>
+        <item name="colorOnPrimary">@color/bege</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/bege_escuro</item>
+        <item name="colorSecondaryVariant">@color/marrom</item>
+        <item name="colorOnSecondary">@color/marrom_escuro</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/abhaya_libre_medium</item>
+    </style>
+
+</resources>

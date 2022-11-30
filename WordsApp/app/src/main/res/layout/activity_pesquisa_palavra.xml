@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bege"
+        tools:context=".view.activity.PesquisaPalavraActivity">
+        <ProgressBar
+            android:id="@+id/progressbar_pesquisa_palavra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview_gradient_lista_de_palavras"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="-50dp"
+            android:src="@drawable/gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/marrom_escuro"
+            android:textSize="30sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/app_name"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_searchview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview_gradient_lista_de_palavras">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchview_lista_de_palavras"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/marrom"
+                app:defaultQueryHint="Buscar"
+                app:iconifiedByDefault="false"
+                app:queryHint="Buscar"
+                app:searchIcon="@drawable/ic_search" />
+        </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_lista_de_informacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cardview_searchview"
+            android:visibility="gone"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_palavra_nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Livro"
+                android:textColor="@color/marrom_escuro"
+                android:textSize="40sp"
+                android:layout_margin="16dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_sinonimos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textview_palavra_nome"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="16dp"
+                android:text="@string/ver_sinonimos"
+                android:textSize="20sp"
+                android:textColor="@color/marrom_escuro"
+                app:cornerRadius="16dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_informacoes_palavra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/button_sinonimos"
+                tools:listitem="@layout/item_informacoes_palavra"
+                tools:itemCount="2"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_palavra_nao_encontrada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cardview_searchview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/palavra_nao_encontrada"
+            android:textSize="40sp"
+            android:layout_marginHorizontal="16dp"
+            android:textColor="@color/marrom_escuro"
+            android:visibility="gone"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
